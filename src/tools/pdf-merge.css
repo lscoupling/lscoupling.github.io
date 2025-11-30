@@ -1,0 +1,181 @@
+/* ---------------------------------- */
+/* 容器及通用樣式 */
+/* ---------------------------------- */
+.pdf-tool-container {
+    /* 注意: 在 React Component 中，最好不要在容器上設置 font-family, background, padding, text-align，
+       而是把它們設置在全域 body 或父級 layout 容器上。但這裡尊重你的原始寫法。 */
+    font-family: "Noto Sans TC", sans-serif;
+    background: #f5f7fb;
+    padding: 30px;
+    text-align: center;
+}
+
+/* 模式切換 */
+#view-toggle {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#view-toggle button {
+    background: #f5f5f5;
+    border: none;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+#view-toggle button.active {
+    background: #cce5ff;
+}
+
+/* 上傳區 */
+#upload-area {
+    border: 2px dashed #99b6d6;
+    background: #eaf2ff;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+}
+
+/* 預覽列表 */
+#preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    /* 列表模式下會被覆蓋 */
+}
+
+/* ---------------------------------- */
+/* 預覽框 (Preview Mode) */
+/* ---------------------------------- */
+.preview-box {
+    position: relative; /* 為了 delete-btn 的絕對定位 */
+    width: 180px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    /* 允許拖曳時的動畫效果 */
+    transition: width 0.3s, transform 0.3s;
+}
+
+/* canvas 縮圖 */
+.preview-box canvas {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: block; /* 確保它是區塊元素 */
+}
+
+.preview-name {
+    font-size: 13px;
+    color: #333;
+    word-break: break-all;
+}
+
+.page-num {
+    background: #3a7bd5;
+    color: #fff;
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+/* 刪除按鈕 */
+.delete-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: #cfcfcf;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1; /* 確保 "×" 居中 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.delete-btn:hover {
+    background-color: #a9a9a9;
+    transform: scale(1.1);
+}
+
+/* 合併按鈕 */
+#merge-btn {
+    margin-top: 25px;
+    padding: 8px 16px;
+    background: #3a7bd5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+
+#merge-btn:hover {
+    background: #255fa6;
+}
+
+
+/* ---------------------------------- */
+/* 列表顯示模式 (List Mode) - 透過 body[data-mode="list"] 觸發 */
+/* ---------------------------------- */
+
+/* 確保列表項目垂直堆疊 */
+body[data-mode="list"] #preview {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+body[data-mode="list"] .preview-box {
+    width: 100%; /* 列表模式下佔滿寬度 */
+    max-width: 400px; /* 限制最大寬度，避免過寬 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    margin: 8px auto; /* 垂直間距 */
+}
+
+body[data-mode="list"] .preview-box canvas {
+    display: none; /* 列表模式下隱藏縮圖 */
+}
+
+body[data-mode="list"] .preview-name {
+    /* 允許名稱佔用較多空間 */
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+body[data-mode="list"] .page-num {
+    /* 調整位置 */
+    margin-top: 0;
+    flex-shrink: 0; /* 不壓縮頁碼 */
+}
+
+body[data-mode="list"] .delete-btn {
+    position: static; /* 讓刪除按鈕回到文檔流 */
+    margin-left: 8px;
+    flex-shrink: 0;
+}

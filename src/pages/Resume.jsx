@@ -9,8 +9,8 @@ const Resume = () => {
         <img className="avatar" src={profile} alt="Profile" />
         <div>
           <h1 className="name">饒貫玄</h1>
-          <p className="tagline">數學講師｜物理碩士｜希望職稱：半導體工程師</p>
-          <p className="location">高雄市苓雅區 · 在職中 · 可於錄取後一週到職</p>
+          <p className="tagline">數學講師｜物理碩士｜希望職稱：軟體工程師</p>
+          <p className="location">桃園市中壢區 · 在職中 · 可於錄取後一週到職</p>
         </div>
       </header>
 
@@ -21,12 +21,12 @@ const Resume = () => {
             <div>
               <p><span className="label">手機</span>0975-551-630</p>
               <p><span className="label">E-mail</span><a href="mailto:e0975551630@outlook.com">e0975551630@outlook.com</a></p>
-              <p><span className="label">就業狀態</span>在職中（數學講師）</p>
+              <p><span className="label">就業狀態</span>在職中（軟體工程師）</p>
             </div>
             <div>
               <p><span className="label">學歷</span>國立成功大學 物理系 碩士</p>
               <p><span className="label">語言</span>中文（精通）、英文（中等）、台語（精通）</p>
-              <p><span className="label">求職意向</span>半導體工程師（高雄地區優先）</p>
+              <p><span className="label">求職意向</span>軟體工程師</p>
             </div>
           </div>
         </section>
