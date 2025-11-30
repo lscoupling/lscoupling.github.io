@@ -6,5 +6,5 @@ import react from '@vitejs/plugin-react'
 // 若是 <username>.github.io 這種使用者首頁專案，base 改成 '/'
 export default defineConfig({
   plugins: [react()],
-  base: '/lscoupling.github.io/'
+  base: '/'
 })
