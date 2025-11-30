@@ -3,7 +3,7 @@ import Resume from "./pages/Resume";
 import Tools from "./pages/Tools";
 import XmlTool from "./tools/XmlTool";
 import PdfMerge from "./tools/PdfMerge";
-
+import StockChart from "./tools/StockChart";
 
 const App = () => {
   return (
@@ -33,6 +33,7 @@ const App = () => {
           <Route path="/tools" element={<Tools />} />
           <Route path="/tools/xml" element={<XmlTool />} />
           <Route path="/tools/pdf-merge" element={<PdfMerge />} />
+          <Route path="/tools/stock-chart" element={<StockChart />} />
         </Routes>
       </div>
     </>

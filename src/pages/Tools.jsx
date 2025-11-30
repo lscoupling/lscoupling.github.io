@@ -5,6 +5,7 @@ const Tools = () => {
     { name: "XML → HTML Excel 表格", path: "/tools/xml" },
     { name: "PDF 合併器", path: "/tools/pdf-merge" },
     { name: "股票走勢動畫", path: "/tools/stock-chart" }
+
   ];
 
   return (

@@ -19,7 +19,7 @@ const Resume = () => {
           <h2>聯絡資訊</h2>
           <div className="grid grid-2">
             <div>
-              <p><span className="label">手機</span>0975-551-630</p>
+              <p><span className="label">手機號碼</span>0975-551-630</p>
               <p><span className="label">E-mail</span><a href="mailto:e0975551630@outlook.com">e0975551630@outlook.com</a></p>
               <p><span className="label">就業狀態</span>在職中（軟體工程師）</p>
             </div>

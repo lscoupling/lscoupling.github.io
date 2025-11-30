@@ -1,0 +1,89 @@
+.stock-tool{
+  background:#0b0d10;
+  color:#dfe6f0;
+  font-family:"Noto Sans TC",sans-serif;
+  display:flex;
+  padding:16px;
+  gap:16px;
+  height:100vh;
+  box-sizing:border-box;
+}
+
+.stock-tool #left{
+  width:260px;
+  background:#101621;
+  border:1px solid #1f2a3b;
+  border-radius:10px;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:24px;
+  box-sizing:border-box;
+}
+
+
+.stock-tool #left h3{
+  margin:0 0 12px 0;
+  font-size:15px;
+  color:#cfd6e4;
+}
+
+.stock-tool button{
+  width:100%;
+  padding:12px 0;
+  font-size:15px;
+  margin-top:12px;
+  background:linear-gradient(90deg,#2979ff,#00b0ff);
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.stock-tool #right{
+  flex:1;
+  background:#0f141c;
+  border:1px solid #1f2633;
+  border-radius:10px;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+}
+
+.stock-tool canvas{
+  width:100%;
+  height:400px;
+  background:#0b0f18;
+  border-radius:8px;
+  border:1px solid #1f2633;
+}
+
+.stock-tool #hint{
+  color:#889;
+  margin-top:10px;
+  font-size:13px;
+  text-align:center;
+}
+
+.stock-tool .speed-control{
+  margin-top:16px;
+  font-size:14px;
+  color:#a0b0c0;
+}
+#sampleBtn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg,#2979ff,#00b0ff);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#sampleBtn:hover {
+  opacity: 0.9;
+}
