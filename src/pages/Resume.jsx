@@ -1,14 +1,13 @@
+import avatar from "../assets/貫玄照片2025.jpg";
+
+
 export default function Resume() {
   return (
     <main className="content">
 
       {/* Header / Avatar */}
       <section className="hero">
-        <img
-          src="src/assets/貫玄照片2025.jpg"
-          alt="個人照片"
-          className="avatar"
-        />
+        <img src={avatar} alt="個人照片" className="avatar" />
         <div>
           <h1 className="name">饒貫玄</h1>
           <p className="tagline">軟體工程師｜物理碩士｜AI 與自動化整合</p>
@@ -43,56 +42,56 @@ export default function Resume() {
       </section>
 
       {/* Experience */}
-<section className="card">
-  <h2>經歷</h2>
+      <section className="card">
+        <h2>經歷</h2>
 
-  <ul className="timeline">
-    <li>
-      <div className="timeline-header">
-        <span className="timeline-title">
-          雲端大師 AR 影像辨識教學 APP 開發推廣計畫
-        </span>
-        <span className="timeline-time">2022-09-01 ～ 2023-06-30</span>
-      </div>
-    </li>
+        <ul className="timeline">
+          <li>
+            <div className="timeline-header">
+              <span className="timeline-title">
+                雲端大師 AR 影像辨識教學 APP 開發推廣計畫
+              </span>
+              <span className="timeline-time">2022-09-01 ～ 2023-06-30</span>
+            </div>
+          </li>
 
-    <li>
-      <div className="timeline-header">
-        <span className="timeline-title">
-          2023 iThome 臺灣雲端大會活動
-        </span>
-        <span className="timeline-time">2023-03-23 ～ 2023-07-19</span>
-      </div>
-    </li>
+          <li>
+            <div className="timeline-header">
+              <span className="timeline-title">
+                2023 iThome 臺灣雲端大會活動
+              </span>
+              <span className="timeline-time">2023-03-23 ～ 2023-07-19</span>
+            </div>
+          </li>
 
-    <li>
-      <div className="timeline-header">
-        <span className="timeline-title">
-          桃園113年度 創新產業應用培育工作坊計畫
-        </span>
-        <span className="timeline-time">2024-08-02 ～ 2025-09-16</span>
-      </div>
-    </li>
+          <li>
+            <div className="timeline-header">
+              <span className="timeline-title">
+                桃園113年度 創新產業應用培育工作坊計畫
+              </span>
+              <span className="timeline-time">2024-08-02 ～ 2025-09-16</span>
+            </div>
+          </li>
 
-    <li>
-      <div className="timeline-header">
-        <span className="timeline-title">
-          桃園114年度 創新產業應用培育工作坊計畫
-        </span>
-        <span className="timeline-time">2025-07-07 ～ 2025-07-24</span>
-      </div>
-    </li>
+          <li>
+            <div className="timeline-header">
+              <span className="timeline-title">
+                桃園114年度 創新產業應用培育工作坊計畫
+              </span>
+              <span className="timeline-time">2025-07-07 ～ 2025-07-24</span>
+            </div>
+          </li>
 
-    <li>
-      <div className="timeline-header">
-        <span className="timeline-title">
-          深談 AWS 雲端上的 AI Agent
-        </span>
-        <span className="timeline-time">2024-11-01 ～ 2025-09-30</span>
-      </div>
-    </li>
-  </ul>
-</section>
+          <li>
+            <div className="timeline-header">
+              <span className="timeline-title">
+                深談 AWS 雲端上的 AI Agent
+              </span>
+              <span className="timeline-time">2024-11-01 ～ 2025-09-30</span>
+            </div>
+          </li>
+        </ul>
+      </section>
 
 
       {/* Skills */}
