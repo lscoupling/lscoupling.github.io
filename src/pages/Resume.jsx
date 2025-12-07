@@ -1,6 +1,5 @@
 import avatar from "../assets/貫玄照片2025.jpg";
 
-
 export default function Resume() {
   return (
     <main className="content">
