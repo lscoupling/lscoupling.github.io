@@ -156,8 +156,9 @@ body {
 }
 
 p {
-  margin: 4px 0;
+  margin: 12px 0; /* ← 原本是 4px */
   font-size: 14px;
+  line-height: 1.6; /* ← 增加行距，變好讀 */
 }
 
 a {
