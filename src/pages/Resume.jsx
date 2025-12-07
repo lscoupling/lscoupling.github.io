@@ -84,7 +84,7 @@ export default function Resume() {
           <li>
             <div className="timeline-header">
               <span className="timeline-title">
-                深談 AWS 雲端上的 AI Agent
+                深談 AWS 雲端上的 AI Agent書籍出版
               </span>
               <span className="timeline-time">2024-11-01 ～ 2025-09-30</span>
             </div>
