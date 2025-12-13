@@ -2,10 +2,12 @@
   "name": "lscoupling.github.io",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://lscoupling.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
