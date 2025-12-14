@@ -26,7 +26,7 @@ body {
   display: flex;
   align-items: center;
   padding: 24px 40px;
-  background: #fff;
+  background: var(--card-bg);
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -39,7 +39,7 @@ body {
 .logo {
   font-size: 26px;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-main);
   text-decoration: none;
 }
 
@@ -53,7 +53,7 @@ body {
   font-size: 22px;
   font-weight: 500;
   text-decoration: none;
-  color: #334;
+  color: var(--text-main);
   letter-spacing: 2px;
   transition: 0.25s;
 }
@@ -271,12 +271,12 @@ nav {
 
 .tool-card {
   padding: 16px;
-  background: white;
+  background: var(--card-bg);
   border-radius: 10px;
   border: 1px solid #ddd;
   text-decoration: none;
   font-size: 18px;
-  color: #111;
+  color: var(--text-main);
   text-align: center;
   transition: 0.25s;
 }
@@ -285,3 +285,52 @@ nav {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,.1);
 }
+
+/* ------------------------- */
+/* Dark theme (class 切換)    */
+/* 切換方式：在 body 上加上 class "dark" */
+/* ------------------------- */
+body.dark {
+  --bg: #071426;
+  --card-bg: #0f1724;
+  --accent: #f97316;
+  --accent-soft: #12202b;
+  --text-main: #e6eef8;
+  --text-sub: #9aa6b2;
+  --border: rgba(255,255,255,0.06);
+  background: radial-gradient(circle at top left, #061426 0, #071426 50%, #061018 100%);
+  color: var(--text-main);
+}
+
+body.dark .navbar {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+body.dark .card,
+body.dark .tool-card {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+body.dark .nav-right a {
+  color: var(--text-main);
+}
+
+/* 調整特定 tools 的背景 */
+body.dark .pdf-tool-container,
+body.dark .stock-tool,
+body.dark .xml-tool-container {
+  background: #071426;
+  color: var(--text-main);
+}
+
+/* 深色模式下調整連結與 hero 背景以提升可讀性 */
+body.dark a {
+  color: #7fb1ff;
+}
+
+body.dark .hero {
+  background: linear-gradient(120deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+}
+

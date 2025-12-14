@@ -197,7 +197,7 @@ export default function XmlTool() {
   }, []);
 
   return (
-    <div>
+    <div className="xml-tool-container">
       <h2>XML → HTML Excel 表格（完整功能版）</h2>
 
       <input type="file" id="fileInput" accept=".xls,.xlsx,.xml" />

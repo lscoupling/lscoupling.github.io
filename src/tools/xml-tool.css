@@ -71,3 +71,45 @@ tr:nth-child(even) td { background: #f2f2f2; }
   user-select: none;
   z-index: 10;
 }
+
+/* Dark mode overrides for XML tool */
+body.dark .xml-tool-container {
+  background: #071426;
+  color: var(--text-main);
+}
+
+body.dark table {
+  background: var(--card-bg);
+  color: var(--text-main);
+  border-collapse: collapse;
+}
+
+body.dark th {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-main);
+}
+
+body.dark td {
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--text-main);
+  background: transparent;
+}
+
+body.dark tr:nth-child(even) td { background: rgba(255,255,255,0.01); }
+
+body.dark .selected { background-color: rgba(255,255,255,0.08) !important; }
+
+body.dark .rowHeader {
+  background: rgba(255,255,255,0.03);
+  color: var(--text-main);
+}
+
+body.dark #formulaBar {
+  background: rgba(255,255,255,0.03);
+  color: var(--text-main);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+body.dark .th-resizer {
+  background: rgba(255,255,255,0.02);
+}

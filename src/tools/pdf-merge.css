@@ -135,6 +135,39 @@
     background: #255fa6;
 }
 
+/* Dark mode overrides (when body.dark is present) */
+body.dark #upload-area {
+    background: rgba(255,255,255,0.02);
+    border-color: rgba(255,255,255,0.06);
+    color: var(--text-main);
+}
+
+body.dark #preview {
+    /* keep layout but ensure text inherits light color */
+    color: var(--text-main);
+}
+
+body.dark .preview-box {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    color: var(--text-main);
+}
+
+body.dark .preview-name,
+body.dark .page-num {
+    color: var(--text-main);
+}
+
+body.dark .delete-btn {
+    background-color: rgba(255,255,255,0.08);
+    color: var(--text-main);
+}
+
+body.dark #merge-btn {
+    background: linear-gradient(90deg,#3a7bd5,#2b6bd1);
+}
+
 
 /* ---------------------------------- */
 /* 列表顯示模式 (List Mode) - 透過 body[data-mode="list"] 觸發 */
