@@ -35,7 +35,6 @@ npm run build
 ```bash
 npm run deploy
 
----
 
 ## 📁 專案結構
 
