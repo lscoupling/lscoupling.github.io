@@ -1,0 +1,54 @@
+.snake-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.snake-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.snake-meta {
+  display: flex;
+  gap: 12px;
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.snake-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.snake-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.snake-btn:hover {
+  opacity: 0.9;
+}
+
+.snake-canvas {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  display: block;
+}
+
+.snake-hint {
+  margin: 0;
+  color: var(--text-sub);
+  font-size: 13px;
+}

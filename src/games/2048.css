@@ -1,0 +1,119 @@
+.g2048-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.g2048-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.g2048-title h2 {
+  margin: 0;
+}
+
+.g2048-hint {
+  margin: 6px 0 0;
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.g2048-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.g2048-pill {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.g2048-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.g2048-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.g2048-btn:hover {
+  opacity: 0.9;
+}
+
+.g2048-board {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.02);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+body.dark .g2048-board {
+  background: rgba(255,255,255,0.02);
+}
+
+.g2048-cell {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  user-select: none;
+}
+
+.g2048-cell--empty {
+  opacity: 0.55;
+}
+
+/* 用既有主題變數做強弱層級（避免新增大量硬編碼色票） */
+.g2048-cell--v2 { background: var(--accent-soft); }
+.g2048-cell--v4 { background: rgba(249,115,22,0.18); }
+.g2048-cell--v8 { background: rgba(249,115,22,0.28); }
+.g2048-cell--v16 { background: rgba(249,115,22,0.38); }
+.g2048-cell--v32 { background: rgba(249,115,22,0.48); }
+.g2048-cell--v64 { background: rgba(249,115,22,0.58); }
+.g2048-cell--v128 { background: rgba(249,115,22,0.68); }
+.g2048-cell--v256 { background: rgba(249,115,22,0.78); }
+.g2048-cell--v512 { background: rgba(249,115,22,0.86); }
+.g2048-cell--v1024 { background: rgba(249,115,22,0.92); }
+.g2048-cell--v2048 { background: rgba(249,115,22,1); color: #111; }
+
+.g2048-overlay {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+.g2048-overlay p {
+  margin: 6px 0 0;
+  color: var(--text-sub);
+}

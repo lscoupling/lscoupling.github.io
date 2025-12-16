@@ -1,0 +1,123 @@
+.ms-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ms-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ms-title h2 {
+  margin: 0;
+}
+
+.ms-hint {
+  margin: 6px 0 0;
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.ms-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.ms-pill {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.ms-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ms-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.ms-btn:hover {
+  opacity: 0.9;
+}
+
+.ms-board {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.02);
+  padding: 10px;
+  box-sizing: border-box;
+  display: grid;
+  gap: 6px;
+}
+
+body.dark .ms-board {
+  background: rgba(255,255,255,0.02);
+}
+
+.ms-cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.ms-cell:disabled {
+  cursor: default;
+}
+
+.ms-cell--revealed {
+  background: rgba(0,0,0,0.03);
+}
+
+body.dark .ms-cell--revealed {
+  background: rgba(255,255,255,0.03);
+}
+
+.ms-cell--mine {
+  background: rgba(249,115,22,0.20);
+}
+
+.ms-cell--flagged {
+  background: rgba(127,177,255,0.10);
+}
+
+.ms-overlay {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+.ms-overlay p {
+  margin: 6px 0 0;
+  color: var(--text-sub);
+}
