@@ -198,17 +198,28 @@ export default function XmlTool() {
 
   return (
     <div className="xml-tool-container">
-      <h2>線上 Excel 檢視器</h2>
-
-      <input type="file" id="fileInput" accept=".xls,.xlsx,.xml" />
-
-      <div style={{ margin: "15px 0" }}>
-        <label>字體大小：<span id="fontSizeValue">11</span>px</label>
-        <input type="range" min="8" max="20" defaultValue="11" id="fontSizeSlider" style={{ width: "200px" }} />
+      <div className="xml-tool-titlebar">
+        <h2>線上 Excel 檢視器</h2>
       </div>
 
-      <div id="formulaBar"></div>
-      <div id="output"></div>
+      <div className="xml-tool-toolbar">
+        <div className="xml-tool-control">
+          <label className="xml-tool-label" htmlFor="fileInput">選擇檔案</label>
+          <input type="file" id="fileInput" accept=".xls,.xlsx,.xml" />
+        </div>
+
+        <div className="xml-tool-control xml-tool-slider">
+          <label className="xml-tool-label" htmlFor="fontSizeSlider">
+            字體大小：<span id="fontSizeValue">11</span>px
+          </label>
+          <input type="range" min="8" max="20" defaultValue="11" id="fontSizeSlider" />
+        </div>
+      </div>
+
+      <div className="xml-tool-formula" aria-label="公式列">
+        <div id="formulaBar"></div>
+      </div>
+      <div className="xml-tool-output" id="output"></div>
     </div>
   );
 }

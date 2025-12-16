@@ -1,40 +1,96 @@
 .xml-tool-container {
-  font-family: Verdana, sans-serif;
-  background: #f8f9fa;
-  margin: 30px;
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px 32px;
+  color: var(--text-main);
 }
-h2 { color: #0077b6; }
+
+.xml-tool-titlebar {
+  margin: 8px 0 14px;
+}
+
+.xml-tool-container h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.xml-tool-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: flex-end;
+  background: var(--card-bg);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.xml-tool-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.xml-tool-label {
+  font-size: 13px;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+
+.xml-tool-slider {
+  flex: 1;
+  min-width: 260px;
+}
 
 #fileInput {
-  margin-top: 10px;
   padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+#fontSizeSlider {
+  width: 240px;
+}
+
+
+.xml-tool-formula {
+  margin-top: 12px;
 }
 
 #formulaBar {
   width: 100%;
-  height: 40px;
-  font-family: monospace;
-  font-size: 14px;
-  padding: 6px 8px;
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
+  min-height: 40px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
   box-sizing: border-box;
   overflow-x: auto;
+}
+
+.xml-tool-output {
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card-bg);
+  overflow: auto;
+  max-height: 70vh;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
-  background: #fff;
-  margin-top: 10px;
   table-layout: fixed;
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 4px 6px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 6px 8px;
   text-align: left;
   cursor: pointer;
   user-select: none;
@@ -46,18 +102,37 @@ th, td {
 }
 
 th {
-  background: #0077b6;
-  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--accent-soft);
+  color: var(--text-main);
+  font-weight: 700;
 }
 
-tr:nth-child(even) td { background: #f2f2f2; }
+tr:nth-child(even) td { background: rgba(15, 23, 42, 0.02); }
 
-.selected { background-color: #ffe599 !important; }
+td:hover {
+  background: rgba(249, 115, 22, 0.10);
+}
+
+.selected { background-color: var(--accent-soft) !important; }
 
 .rowHeader {
-  background: #e9ecef;
+  background: rgba(15, 23, 42, 0.04);
   font-weight: bold;
   text-align: center;
+}
+
+th.rowHeader,
+td.rowHeader {
+  position: sticky;
+  left: 0;
+  z-index: 6;
+}
+
+th.rowHeader {
+  z-index: 7;
 }
 
 /* ⭐ 欄位拖曳用 */
@@ -72,44 +147,19 @@ tr:nth-child(even) td { background: #f2f2f2; }
   z-index: 10;
 }
 
-/* Dark mode overrides for XML tool */
-body.dark .xml-tool-container {
-  background: #071426;
-  color: var(--text-main);
-}
-
-body.dark table {
-  background: var(--card-bg);
-  color: var(--text-main);
-  border-collapse: collapse;
+/* Dark mode tweaks (keep using theme variables) */
+body.dark .xml-tool-output,
+body.dark #formulaBar,
+body.dark #fileInput {
+  border-color: rgba(255, 255, 255, 0.10);
 }
 
 body.dark th {
-  background: rgba(255,255,255,0.06);
-  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
 }
 
-body.dark td {
-  border: 1px solid rgba(255,255,255,0.03);
-  color: var(--text-main);
-  background: transparent;
-}
+body.dark tr:nth-child(even) td { background: rgba(255, 255, 255, 0.02); }
 
-body.dark tr:nth-child(even) td { background: rgba(255,255,255,0.01); }
-
-body.dark .selected { background-color: rgba(255,255,255,0.08) !important; }
-
-body.dark .rowHeader {
-  background: rgba(255,255,255,0.03);
-  color: var(--text-main);
-}
-
-body.dark #formulaBar {
-  background: rgba(255,255,255,0.03);
-  color: var(--text-main);
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-body.dark .th-resizer {
-  background: rgba(255,255,255,0.02);
+body.dark td:hover {
+  background: rgba(255, 255, 255, 0.06);
 }
