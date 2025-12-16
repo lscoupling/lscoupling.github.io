@@ -204,8 +204,7 @@ export default function XmlTool() {
 
       <div className="xml-tool-toolbar">
         <div className="xml-tool-control">
-          <label className="xml-tool-label" htmlFor="fileInput">選擇檔案</label>
-          <input type="file" id="fileInput" accept=".xls,.xlsx,.xml" />
+          <input type="file" id="fileInput" accept=".xls,.xlsx,.xml" aria-label="選擇檔案" />
         </div>
 
         <div className="xml-tool-control xml-tool-slider">
