@@ -1,0 +1,345 @@
+.weather-tool {
+  background: var(--bg);
+  color: var(--text-main);
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 18px 20px 16px;
+  overflow-x: hidden;
+}
+
+.weather-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.weather-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.weather-sub {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.weather-sub-controls {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.weather-select {
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card-bg) 80%, transparent);
+  color: var(--text-main);
+  font-weight: 650;
+  max-width: 100%;
+}
+
+.weather-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+  .weather-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .weather-actions {
+    justify-content: flex-end;
+  }
+}
+
+.weather-location {
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.weather-badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  color: color-mix(in srgb, var(--text-main) 90%, var(--accent));
+}
+
+.weather-actions {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.weather-btn {
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card-bg) 80%, transparent);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 650;
+}
+
+.weather-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.weather-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--accent-soft);
+}
+
+.weather-card {
+  margin-top: 14px;
+  background: var(--card-bg);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+}
+
+.weather-loading {
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.weather-error {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.weather-error-title {
+  font-weight: 750;
+}
+
+.weather-error-msg {
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.weather-top {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 14px;
+}
+
+/* Prevent long horizontal content (hourly row) from forcing the grid wider than the page */
+.weather-top > .weather-card {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .weather-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+.weather-now {
+  margin-top: 0;
+}
+
+.weather-now-main {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.weather-now-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.25));
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+body.dark .weather-now-icon {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+.weather-now-temp {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.weather-now-unit {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: var(--text-sub);
+}
+
+.weather-now-cond {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+
+.weather-now-updated {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.weather-now-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+  .weather-now-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.weather-stat {
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 12px;
+  padding: 10px 10px;
+  background: color-mix(in srgb, var(--card-bg) 86%, transparent);
+}
+
+.weather-stat-k {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.weather-stat-v {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.weather-hourly {
+  margin-top: 0;
+}
+
+.weather-hourly h3,
+.weather-daily h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.weather-hourly-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.weather-hour {
+  flex: 0 0 auto;
+  width: 72px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 14px;
+  padding: 10px 8px;
+  text-align: center;
+  background: color-mix(in srgb, var(--card-bg) 90%, transparent);
+}
+
+.weather-hour-t {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.weather-hour-i {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.weather-hour-v {
+  margin-top: 6px;
+  font-weight: 800;
+}
+
+.weather-hour-p {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.weather-daily {
+  margin-top: 14px;
+}
+
+.weather-daily-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weather-day {
+  display: grid;
+  grid-template-columns: 92px 38px 1fr;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--card-bg) 90%, transparent);
+}
+
+.weather-day-date {
+  font-weight: 800;
+}
+
+.weather-day-week {
+  font-size: 12px;
+  color: var(--text-sub);
+  margin-top: 2px;
+}
+
+.weather-day-mid {
+  font-size: 18px;
+  text-align: center;
+}
+
+.weather-day-temps {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.weather-day-hi {
+  font-weight: 850;
+}
+
+.weather-day-lo {
+  color: var(--text-sub);
+}
+
+.weather-day-pop {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-sub);
+  text-align: right;
+}
+
+.weather-footnote {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-sub);
+}

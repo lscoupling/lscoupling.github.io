@@ -10,6 +10,7 @@ import Minesweeper from "./games/Minesweeper";
 import XmlTool from "./tools/XmlTool";
 import PdfMerge from "./tools/PdfMerge";
 import StockChart from "./tools/StockChart";
+import WeatherTool from "./tools/WeatherTool";
 
 const App = () => {
   const [isDark, setIsDark] = useState(() => document.body.classList.contains("dark"));
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="/games/2048" element={<Game2048 />} />
           <Route path="/games/minesweeper" element={<Minesweeper />} />
           <Route path="/tools/xml" element={<XmlTool />} />
+          <Route path="/tools/weather" element={<WeatherTool />} />
           <Route path="/tools/pdf-merge" element={<PdfMerge />} />
           <Route path="/tools/stock-chart" element={<StockChart />} />
         </Routes>

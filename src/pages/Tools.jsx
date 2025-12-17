@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const Tools = () => {
   const tools = [
+    { name: "天氣", path: "/tools/weather" },
     { name: "線上 Excel 檢視器", path: "/tools/xml" },
     { name: "PDF 合併器", path: "/tools/pdf-merge" },
     { name: "股票走勢動畫", path: "/tools/stock-chart" },

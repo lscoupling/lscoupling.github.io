@@ -345,7 +345,8 @@ body.dark .nav-right a {
 /* 調整特定 tools 的背景 */
 body.dark .pdf-tool-container,
 body.dark .stock-tool,
-body.dark .xml-tool-container {
+body.dark .xml-tool-container,
+body.dark .weather-tool {
   background: #071426;
   color: var(--text-main);
 }
