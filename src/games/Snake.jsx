@@ -139,9 +139,7 @@ export default function Snake() {
       ctx.globalAlpha = 0.85;
       ctx.font = "600 18px system-ui, -apple-system, Segoe UI, sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("按 Enter 開始", W / 2, H / 2 - 6);
-      ctx.font = "14px system-ui, -apple-system, Segoe UI, sans-serif";
-      ctx.fillText("方向鍵 / WASD 控制，Esc 暫停", W / 2, H / 2 + 18);
+      ctx.fillText("按 Enter 開始", W / 2, H / 2);
       ctx.globalAlpha = 1;
     }
 
@@ -231,6 +229,13 @@ export default function Snake() {
     if (status === "running") return;
     setStatus("running");
   }, [status]);
+
+  const queueDirection = useCallback((next) => {
+    const current = directionRef.current;
+    if (!isOpposite(current, next)) {
+      nextDirectionRef.current = next;
+    }
+  }, []);
 
   const togglePause = useCallback(() => {
     setStatus((s) => {
@@ -323,7 +328,7 @@ export default function Snake() {
 
   return (
     <main className="content">
-      <section className="card snake-wrap">
+      <section className="card snake-shell">
         <div className="snake-topbar">
           <div>
             <h2 style={{ margin: 0 }}>貪吃蛇</h2>
@@ -331,32 +336,117 @@ export default function Snake() {
               方向鍵 / WASD 控制，Enter 開始，Esc 暫停，R 重來
             </p>
           </div>
-
-          <div className="snake-actions">
-            <button
-              className="snake-btn"
-              onClick={() => {
-                if (status === "ready") start();
-                else if (status === "running" || status === "paused") togglePause();
-              }}
-            >
-              {status === "ready" ? "開始" : status === "paused" ? "繼續" : "暫停"}
-            </button>
-            <button className="snake-btn" onClick={resetGame}>
-              重新開始
-            </button>
-            <Link className="snake-btn" to="/games">
-              回清單
-            </Link>
-          </div>
-
-          <div className="snake-meta">
-            <div>分數：{score}</div>
-            <div>狀態：{status === "over" ? "結束" : status}</div>
-          </div>
         </div>
 
-        <canvas ref={canvasRef} className="snake-canvas" />
+        <div className="snake-layout">
+          <div className="snake-stage">
+            <div className="snake-arcade">
+              <div className="snake-screen">
+                <canvas ref={canvasRef} className="snake-canvas" />
+                <div className="snake-crt" aria-hidden="true" />
+              </div>
+            </div>
+
+            <div className="snake-dpad" aria-label="方向鍵（行動裝置）">
+              <div />
+              <button
+                type="button"
+                className="snake-dpad-btn"
+                aria-label="上"
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  queueDirection({ x: 0, y: -1 });
+                }}
+              >
+                ▲
+              </button>
+              <div />
+
+              <button
+                type="button"
+                className="snake-dpad-btn"
+                aria-label="左"
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  queueDirection({ x: -1, y: 0 });
+                }}
+              >
+                ◀
+              </button>
+              <button
+                type="button"
+                className="snake-dpad-btn"
+                aria-label="下"
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  queueDirection({ x: 0, y: 1 });
+                }}
+              >
+                ▼
+              </button>
+              <button
+                type="button"
+                className="snake-dpad-btn"
+                aria-label="右"
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  queueDirection({ x: 1, y: 0 });
+                }}
+              >
+                ▶
+              </button>
+            </div>
+          </div>
+
+          <aside className="snake-side" aria-label="操作說明">
+            <div className="snake-side-card">
+              <div className="snake-side-title">操作說明</div>
+
+              <div className="snake-actions">
+                <button
+                  type="button"
+                  className="snake-btn"
+                  onClick={() => {
+                    if (status === "ready") start();
+                    else if (status === "running" || status === "paused") togglePause();
+                  }}
+                >
+                  {status === "ready" ? "開始" : status === "paused" ? "繼續" : "暫停"}
+                </button>
+                <button type="button" className="snake-btn" onClick={resetGame}>
+                  重新開始
+                </button>
+                <Link className="snake-btn" to="/games">
+                  回清單
+                </Link>
+              </div>
+
+              <div className="snake-meta">
+                <div>分數：{score}</div>
+                <div>狀態：{status === "over" ? "結束" : status}</div>
+              </div>
+
+              <div className="snake-help">
+                <div className="snake-help-row">
+                  <div className="snake-help-label">移動</div>
+                  <div className="snake-help-keys">方向鍵 / WASD</div>
+                </div>
+                <div className="snake-help-row">
+                  <div className="snake-help-label">開始</div>
+                  <div className="snake-help-keys">Enter</div>
+                </div>
+                <div className="snake-help-row">
+                  <div className="snake-help-label">暫停 / 繼續</div>
+                  <div className="snake-help-keys">Esc</div>
+                </div>
+                <div className="snake-help-row">
+                  <div className="snake-help-label">重新開始</div>
+                  <div className="snake-help-keys">R</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
       </section>
     </main>
   );

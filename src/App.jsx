@@ -1,4 +1,5 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
+import { Routes, Route, NavLink } from "react-router-dom";
 import Resume from "./pages/Resume";
 import Tools from "./pages/Tools";
 import Games from "./pages/Games";
@@ -11,6 +12,8 @@ import PdfMerge from "./tools/PdfMerge";
 import StockChart from "./tools/StockChart";
 
 const App = () => {
+  const [isDark, setIsDark] = useState(() => document.body.classList.contains("dark"));
+
   return (
     <>
       <nav className="navbar">
@@ -19,16 +22,32 @@ const App = () => {
         </div>
 
         <div className="nav-right">
-          <Link to="/">首頁</Link>
-          <Link to="/tools">自製小工具</Link>
-          <Link to="/games">小遊戲</Link>
+          <NavLink to="/" end className={({ isActive }) => `nav-pill ${isActive ? "is-active" : ""}`}
+          >
+            <span className="nav-pill-icon" aria-hidden="true">🏠</span>
+            <span className="nav-pill-label">首頁</span>
+          </NavLink>
+          <NavLink to="/tools" className={({ isActive }) => `nav-pill ${isActive ? "is-active" : ""}`}
+          >
+            <span className="nav-pill-icon" aria-hidden="true">🛠️</span>
+            <span className="nav-pill-label">小工具</span>
+          </NavLink>
+          <NavLink to="/games" className={({ isActive }) => `nav-pill ${isActive ? "is-active" : ""}`}
+          >
+            <span className="nav-pill-icon" aria-hidden="true">🎮</span>
+            <span className="nav-pill-label">小遊戲</span>
+          </NavLink>
           <button
             className="theme-toggle"
             onClick={() => {
-              document.body.classList.toggle("dark");
+              setIsDark(prev => {
+                const next = !prev;
+                document.body.classList.toggle("dark", next);
+                return next;
+              });
             }}
           >
-            🌙
+            {isDark ? "☀️" : "🌙"}
           </button>
         </div>
       </nav>
