@@ -29,11 +29,25 @@
 │   ├── assets/                      # 圖片與靜態資源
 │   ├── pages/
 │   │   ├── Resume.jsx               # 個人履歷與介紹頁面
-│   │   └── Tools.jsx                # 小工具導航頁面
+│   │   ├── Tools.jsx                # 小工具導航頁面
+│   │   ├── Games.jsx                # 小遊戲清單頁
+│   │   └── GamesComingSoon.jsx      # Coming soon 清單頁
+│   ├── games/
+│   │   ├── Snake.jsx                # 貪吃蛇
+│   │   ├── snake.css                # 貪吃蛇樣式
+│   │   ├── Game2048.jsx             # 2048
+│   │   ├── 2048.css                 # 2048 樣式
+│   │   ├── Minesweeper.jsx          # 踩地雷
+│   │   └── minesweeper.css          # 踩地雷樣式
 │   ├── tools/
 │   │   ├── PdfMerge.jsx             # PDF 合併工具
+│   │   ├── pdf-merge.css             # PDF 合併工具樣式
 │   │   ├── StockChart.jsx           # 股票走勢動畫工具
-│   │   └── XmlTool.jsx              # XML → HTML 表格轉換工具
+│   │   ├── stock-chart.css           # 股票走勢動畫工具樣式
+│   │   ├── XmlTool.jsx              # 線上 Excel 檢視器
+│   │   ├── xml-tool.css              # 線上 Excel 檢視器樣式
+│   │   ├── WeatherTool.jsx          # 天氣小工具（免 API Key）
+│   │   └── weather-tool.css          # 天氣小工具樣式
 │   ├── App.jsx                      # 應用主結構與路由設定
 │   ├── main.jsx                     # React 入口檔案
 │   └── styles.css                   # 全站樣式與主題變數
