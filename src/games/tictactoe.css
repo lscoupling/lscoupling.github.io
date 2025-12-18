@@ -1,0 +1,129 @@
+.ttt-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ttt-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb {
+  margin: 0 0 6px;
+  color: var(--text-sub);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumb-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  opacity: 0.7;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.ttt-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ttt-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.ttt-btn:hover {
+  opacity: 0.9;
+}
+
+.ttt-status {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.ttt-board {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border-radius: 14px;
+}
+
+.ttt-cell {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-size: 42px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.ttt-cell:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.ttt-cell:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.ttt-cell--filled {
+  background: var(--accent-soft);
+}
+
+.ttt-cell--win {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 20%, var(--card-bg));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ttt-hints {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.ttt-pill {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: var(--card-bg);
+  color: var(--text-main);
+}

@@ -15,6 +15,9 @@ export default function Games() {
         <Link className="tool-card" to="/games/minesweeper">
           踩地雷
         </Link>
+        <Link className="tool-card" to="/games/tictactoe">
+          井字棋
+        </Link>
         <Link className="tool-card" to="/games/coming-soon">
           敬請期待
         </Link>

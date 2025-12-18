@@ -7,6 +7,7 @@ import GamesComingSoon from "./pages/GamesComingSoon";
 import Snake from "./games/Snake";
 import Game2048 from "./games/Game2048";
 import Minesweeper from "./games/Minesweeper";
+import TicTacToe from "./games/TicTacToe";
 import XmlTool from "./tools/XmlTool";
 import PdfMerge from "./tools/PdfMerge";
 import StockChart from "./tools/StockChart";
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="/games/snake" element={<Snake />} />
           <Route path="/games/2048" element={<Game2048 />} />
           <Route path="/games/minesweeper" element={<Minesweeper />} />
+          <Route path="/games/tictactoe" element={<TicTacToe />} />
           <Route path="/tools/xml" element={<XmlTool />} />
           <Route path="/tools/weather" element={<WeatherTool />} />
           <Route path="/tools/pdf-merge" element={<PdfMerge />} />
